@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "745334097708",
+    "project_id": "fir-e-commerce-f9864",
+    "storage_bucket": "fir-e-commerce-f9864.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745334097708:android:208b2e3ac59fdaa37b0e89",
+        "android_client_info": {
+          "package_name": "com.eltohame.demo_ecommerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAih7HCE3lr-c7kNESSAmboX9O4rSaJfCE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
