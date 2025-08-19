@@ -1,15 +1,35 @@
+import 'package:demo_ecommerce/core/services/products_api.dart';
+import 'package:demo_ecommerce/core/utils/git_it.dart';
 import 'package:demo_ecommerce/features/cart/view/screens/cart_screen.dart';
+import 'package:demo_ecommerce/features/home/controller/cubit/home_cubit.dart';
 import 'package:demo_ecommerce/features/home/view/screens/home_screen.dart';
 import 'package:demo_ecommerce/features/profile/view/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:flutter/cupertino.dart';
 
-class BottomNav extends StatelessWidget {
+class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
 
-  List<Widget> _buildScreens() {
-    return [HomeScreen(), CartScreen(), ProfileScreen()];
+  @override
+  State<BottomNav> createState() => _BottomNavState();
+}
+
+class _BottomNavState extends State<BottomNav> {
+  late final List<Widget> _screens;
+
+  @override
+  void initState() {
+    super.initState();
+    _screens = [
+      BlocProvider(
+        create: (context) => HomeCubit(getIt<ProductsApi>())..initializeHome(),
+        child: HomeScreen(),
+      ),
+      CartScreen(),
+      ProfileScreen(),
+    ];
   }
 
   @override
@@ -17,7 +37,7 @@ class BottomNav extends StatelessWidget {
     return PersistentTabView(
       context,
       // controller: PersistentTabController(),
-      screens: _buildScreens(),
+      screens: _screens,
       items: _navBarsItems(),
       handleAndroidBackButtonPress: true, // Default is true.
       resizeToAvoidBottomInset:

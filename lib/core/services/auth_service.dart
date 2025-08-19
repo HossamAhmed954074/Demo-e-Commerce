@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:developer' as dev;
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:demo_ecommerce/core/models/auth_result.dart';
-import 'package:demo_ecommerce/core/models/app_user.dart';
+import 'package:demo_ecommerce/core/models/user/auth_result.dart';
+import 'package:demo_ecommerce/core/models/user/app_user.dart';
 // validation is handled in form fields; no validation utils here
 import 'package:demo_ecommerce/core/errors/firebase_faliure.dart';
 

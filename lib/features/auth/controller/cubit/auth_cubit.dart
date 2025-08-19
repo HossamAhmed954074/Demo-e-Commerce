@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:demo_ecommerce/core/models/app_user.dart';
+import 'package:demo_ecommerce/core/models/user/app_user.dart';
 import 'package:demo_ecommerce/core/services/auth_service.dart';
 import 'package:meta/meta.dart';
 

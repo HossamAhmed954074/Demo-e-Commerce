@@ -4,6 +4,7 @@ import 'package:demo_ecommerce/features/auth/controller/cubit/auth_cubit.dart';
 import 'package:demo_ecommerce/features/auth/view/screens/login_screen.dart';
 import 'package:demo_ecommerce/features/auth/view/screens/register_screen.dart';
 import 'package:demo_ecommerce/features/bottom_nav/bottom_nav.dart';
+import 'package:demo_ecommerce/features/details/view/screen/details_screen.dart';
 import 'package:demo_ecommerce/features/onboarding/view/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,12 +18,14 @@ class AppRouter {
   static const String logIn = '/login';
   static const String signUp = '/signUp';
   static const String bottomNav = '/bottomNav';
+  static const String productDetails = '/productDetails';
 
   // Route names for deep linking and navigation
   static const String onBoardingName = 'onboarding';
   static const String logInName = 'login';
   static const String signUpName = 'signup';
   static const String bottomNavName = 'bottomNav';
+  static const String productDetailsName = 'productDetails';
 
   // Singleton instance
   static final AppRouter _instance = AppRouter._internal();
@@ -78,6 +81,11 @@ class AppRouter {
         path: bottomNav,
         name: bottomNavName,
         builder: (context, state) => BottomNav(),
+      ),
+      GoRoute(
+        path: productDetails,
+        name: productDetailsName,
+        builder: (context, state) => const DetailsScreen(),
       ),
     ],
     // Error page handler (optional, for future extensibility)
